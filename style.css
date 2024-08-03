@@ -5,6 +5,18 @@
     height: 100%;
     
 }
+@media (max-width: 600px) {
+    .khungchinh {
+        width: 90%; /* Đặt độ rộng cố định của phần tử với khoảng cách từ viền */
+        max-width: 360px; /* Đặt kích thước tối đa nếu cần */
+        margin: 0 auto; /* Căn giữa phần tử theo chiều ngang */
+        padding: 10px; /* Khoảng cách từ viền */
+        box-sizing: border-box; /* Bao gồm padding và border trong kích thước phần tử */
+        transform: scale(1); /* Đặt tỷ lệ ban đầu */
+        transition: transform 1.5s ease; /* Thêm hiệu ứng chuyển tiếp cho thuộc tính transform */
+        transform: scale(0.7);
+    }
+}
 @media (max-width: 900px) {
     .khungchinh{
         display: flex;
